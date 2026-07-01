@@ -20,6 +20,11 @@ export default defineConfig({
     tailwindcss(),
     tsConfigPaths(),
   ],
+  resolve: {
+    alias: {
+      tslib: "tslib/tslib.es6.mjs",
+    },
+  },
   ssr: {
     noExternal: ["tslib"],
   },
