@@ -1,138 +1,255 @@
 # 🚀 Career Navigator AI
 
-> **Your AI-powered career copilot for smarter job applications.**
+> **An AI-powered career management platform that helps students optimize resumes, track job applications, prepare for interviews, and generate professional emails — all in one place.**
 
-Career Navigator AI helps students and job seekers optimize their resumes, track applications, prepare for interviews, and generate professional emails—all in one intelligent platform powered by **Google Gemini AI**.
+<p align="center">
+
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript)
+![Supabase](https://img.shields.io/badge/Supabase-Backend-3ECF8E?logo=supabase)
+![Google Gemini](https://img.shields.io/badge/Google-Gemini-4285F4?logo=google)
+![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+</p>
 
 ---
 
 ## 🌐 Live Demo
 
-🔗 **Website:** https://your-vercel-url.vercel.app
+🔗 **Website:** https://career-navigator-ai-five.vercel.app
 
-📹 **Demo Video:** (add YouTube/Loom link)
-
----
-
-## ✨ Features
-
-### 📄 AI Resume Analyzer
-- ATS compatibility scoring
-- Resume-job description matching
-- Personalized improvement suggestions
-- Strength & weakness detection
-
-### 💼 Job Application Tracker
-- Track every application
-- Kanban workflow
-- Search & filter
-- Status analytics
-
-### 🎯 AI Interview Preparation
-- Technical questions
-- Behavioral questions
-- HR interview questions
-- Role-specific preparation
-
-### ✉️ AI Email Generator
-Generate:
-- Recruiter outreach emails
-- Follow-up emails
-- Thank-you emails
-- Referral requests
-
-### 📊 Dashboard
-- Resume score
-- Application analytics
-- Success tracking
-- Progress insights
+🎥 **Demo Video:** https://drive.google.com/file/d/1QkmfMpGjcmoQ3Lwqog_4Wpnmv2hIknAC/view
 
 ---
 
-# 🛠 Tech Stack
+# 📌 Problem Statement
 
-| Category | Technology |
-|-----------|------------|
-| Frontend | React 19, TanStack Start |
-| Language | TypeScript |
-| Styling | Tailwind CSS, shadcn/ui |
-| Backend | Supabase |
-| Database | PostgreSQL |
-| Authentication | Google OAuth |
-| AI | Google Gemini |
-| Storage | Supabase Storage |
-| Deployment | Vercel |
+Students often manage their placement journey across multiple disconnected tools:
+
+- Resume optimization
+- Job application tracking
+- Interview preparation
+- Recruiter communication
+
+This results in poor organization, missed opportunities, and inefficient preparation.
+
+**Career Navigator AI** solves this by bringing every stage of the placement journey into a single AI-powered platform.
 
 ---
 
-# 🧠 AI Workflow
+# ✨ Features
+
+## 📄 AI Resume Analyzer
+
+Upload your resume and paste any Job Description.
+
+Google Gemini instantly provides:
+
+- ATS Score
+- Resume Match Score
+- Strengths
+- Weaknesses
+- Improvement Suggestions
+- Missing Skills
+
+---
+
+## 💼 Job Application Tracker
+
+Manage every application in one place.
+
+Features include:
+
+- Add Applications
+- Edit Applications
+- Delete Applications
+- Search Applications
+- Track Progress
+
+Application stages:
+
+- Applied
+- Online Assessment
+- Interview
+- HR
+- Offer
+- Rejected
+- Withdrawn
+
+---
+
+## 🎯 AI Interview Preparation
+
+Generate personalized interview questions based on:
+
+- Resume
+- Job Description
+
+Question categories:
+
+- Technical
+- Behavioral
+- HR
+
+---
+
+## ✉️ AI Email Generator
+
+Generate professional emails in seconds.
+
+Supports:
+
+- Recruiter Outreach
+- Follow-up Emails
+- Thank You Emails
+- Referral Requests
+
+---
+
+## 📊 Dashboard
+
+Real-time analytics including:
+
+- Resume Score
+- Total Applications
+- Application Status
+- AI Analysis History
+
+---
+
+# 🤖 AI Workflow
 
 ```text
-Resume
-      │
-      ▼
-Google Gemini
-      │
-      ▼
-Resume Analysis
-      │
-      ▼
-ATS Score
-Match Score
-Suggestions
-Interview Questions
-Email Generation
+Resume + Job Description
+            │
+            ▼
+     Google Gemini AI
+            │
+            ▼
+ ┌───────────────────────────┐
+ │ ATS Analysis              │
+ │ Resume Matching           │
+ │ Suggestions               │
+ │ Interview Questions       │
+ │ Email Generation          │
+ └───────────────────────────┘
 ```
 
 ---
 
+# 🏗 Tech Stack
 
-# ⚡ Getting Started
+| Category | Technology |
+|-----------|------------|
+| Frontend | React 19 |
+| Framework | TanStack Start |
+| Language | TypeScript |
+| Styling | Tailwind CSS + shadcn/ui |
+| Backend | Supabase |
+| Database | PostgreSQL |
+| Authentication | Google OAuth (Supabase Auth) |
+| Storage | Supabase Storage |
+| AI | Google Gemini |
+| Deployment | Vercel |
+
+---
+
+# 🚀 Getting Started
+
+## Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/career-navigator-ai.git
+git clone https://github.com/YOUR_USERNAME/career-navigator-ai.git
 
 cd career-navigator-ai
+```
 
+---
+
+## Install Dependencies
+
+```bash
 npm install
-
-npm run dev
 ```
 
 ---
 
 # 🔑 Environment Variables
 
-Create a `.env` file.
+Create a `.env` file by copying `.env.example`.
 
-```env
-VITE_SUPABASE_URL=
-
-VITE_SUPABASE_ANON_KEY=
-
-GEMINI_API_KEY=
+```bash
+cp .env.example .env
 ```
+
+Configure the following variables:
+
+| Variable | Description |
+|----------|-------------|
+| `VITE_SUPABASE_URL` | Client-side Supabase Project URL |
+| `VITE_SUPABASE_PUBLISHABLE_KEY` | Client-side Supabase Publishable (Anon) Key |
+| `VITE_SUPABASE_PROJECT_ID` | Supabase Project Reference |
+| `SUPABASE_URL` | Server-side Supabase Project URL |
+| `SUPABASE_PUBLISHABLE_KEY` | Server-side Supabase Publishable Key |
+| `SUPABASE_SERVICE_ROLE_KEY` | Server-side Service Role Key (**Keep Secret**) |
+| `SUPABASE_PROJECT_ID` | Supabase Project Reference |
+| `GEMINI_API_KEY` | Google Gemini API Key |
+
+A ready-to-use template is already provided in `.env.example`.
 
 ---
 
 # 🗄 Supabase Setup
 
-- Execute migration
-- Enable Google OAuth
-- Create `resumes` storage bucket
-- Configure RLS policies
+1. Create a Supabase Project.
+2. Execute the SQL migration inside:
+
+```text
+supabase/migrations/
+```
+
+3. Enable Google Authentication.
+
+```
+Authentication
+→ Providers
+→ Google
+```
+
+4. Create a Storage Bucket named:
+
+```text
+resumes
+```
+
+5. Configure Row Level Security (RLS).
 
 ---
 
-# 🚀 Deployment
-
-Deploy easily on **Vercel**.
+# ▶️ Run Locally
 
 ```bash
-git push
+npm run dev
 ```
 
-Import the repository and configure environment variables.
+Visit
+
+```
+http://localhost:5173
+```
+
+---
+
+# 🚀 Deploy on Vercel
+
+1. Push the repository to GitHub.
+
+2. Import the project into Vercel.
+
+3. Configure the environment variables.
+
+4. Deploy.
 
 ---
 
@@ -140,25 +257,33 @@ Import the repository and configure environment variables.
 
 ```text
 src/
-components/
-routes/
-lib/
-hooks/
-integrations/
+ ├── components/
+ ├── hooks/
+ ├── integrations/
+ ├── lib/
+ ├── routes/
+ ├── server.ts
+ └── styles.css
+
 supabase/
+ └── migrations/
+
 public/
+
+vite.config.ts
 ```
 
 ---
 
-# 🌟 Future Improvements
+# 🔮 Future Enhancements
 
 - AI Resume Builder
 - Cover Letter Generator
-- Job Recommendation Engine
 - Company Insights
-- Mock Interview Voice Agent
+- Job Recommendation Engine
 - Chrome Extension
+- AI Mock Interview Agent
+- Resume Version Management
 
 ---
 
