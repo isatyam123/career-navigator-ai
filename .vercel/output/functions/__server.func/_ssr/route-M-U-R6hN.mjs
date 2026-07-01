@@ -2,6 +2,7 @@ import { i as __toESM } from "../_runtime.mjs";
 import { _ as useNavigate, f as Outlet, g as Link, l as useRouterState } from "../_libs/@tanstack/react-router+[...].mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { c as require_jsx_runtime, i as Slot } from "../_libs/@radix-ui/react-arrow+[...].mjs";
+import { a as DialogOverlay, i as DialogDescription, n as DialogClose, o as DialogPortal, r as DialogContent, s as DialogTitle, t as Dialog } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { t as supabase } from "./client-CwjOB3K7.mjs";
 import { t as cva } from "../_libs/class-variance-authority+clsx.mjs";
 import { n as cn, t as Button } from "./button-BpE9Czok.mjs";
@@ -9,7 +10,6 @@ import { i as useQueryClient } from "../_libs/tanstack__react-query.mjs";
 import { n as toast } from "../_libs/sonner.mjs";
 import { C as FileText, L as Sparkles, M as Bell, R as PanelLeft, _ as LayoutDashboard, h as LogOut, j as Briefcase, l as Search, p as MessageSquare, s as Settings, t as X, x as GraduationCap, y as History } from "../_libs/lucide-react.mjs";
 import { t as Input } from "./input-NvmijQlt.mjs";
-import { a as DialogOverlay, i as DialogDescription, n as DialogClose, o as DialogPortal, r as DialogContent, s as DialogTitle, t as Dialog } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
 import { a as Trigger, i as Root3, n as Portal, r as Provider, t as Content2 } from "../_libs/radix-ui__react-tooltip.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/route-M-U-R6hN.js

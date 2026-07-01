@@ -1,8 +1,8 @@
 import { l as createServerFn } from "./esm-9EjmF9OT.mjs";
-import { t as requireSupabaseAuth } from "./auth-middleware-BITxcjnR.mjs";
+import { t as requireSupabaseAuth } from "./auth-middleware-B67yFdw9.mjs";
 import { At as objectType, jt as stringType } from "../_libs/@ai-sdk/gateway+[...].mjs";
 import { t as createServerRpc } from "./createServerRpc-TAUNrjZd.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/applications.functions-BVVhsv4G.js
+//#region node_modules/.nitro/vite/services/ssr/assets/applications.functions-BwS8bK_8.js
 var getApplications_createServerFn_handler = createServerRpc({
 	id: "ad7285914c002b5d83f764f9d095460e344f3e861c732b823534f3292394050a",
 	name: "getApplications",

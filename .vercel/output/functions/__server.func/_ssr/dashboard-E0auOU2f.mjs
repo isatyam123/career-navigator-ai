@@ -2,7 +2,7 @@ import { i as __toESM } from "../_runtime.mjs";
 import { g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-arrow+[...].mjs";
-import { n as useServerFn } from "./createSsrRpc-fhM2z-rE.mjs";
+import { n as useServerFn } from "./createSsrRpc-IMwUtkkP.mjs";
 import { t as supabase } from "./client-CwjOB3K7.mjs";
 import { t as Button } from "./button-BpE9Czok.mjs";
 import { i as CardTitle, n as CardContent, r as CardHeader, t as Card } from "./card-Bmhn9hYF.mjs";
@@ -10,8 +10,8 @@ import { t as Progress } from "./progress-ChzuiZwr.mjs";
 import { t as Badge } from "./badge-DHlcf1ty.mjs";
 import { n as useQuery } from "../_libs/tanstack__react-query.mjs";
 import { L as Sparkles, N as ArrowRight, S as Gauge, i as TrendingUp, j as Briefcase, y as History, z as LoaderCircle } from "../_libs/lucide-react.mjs";
-import { n as getDashboardStats } from "./dashboard.functions-CrPFd86C.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/dashboard-DA0TGEnN.js
+import { n as getDashboardStats } from "./dashboard.functions-DuQkyjfe.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/dashboard-E0auOU2f.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function useDisplayName() {

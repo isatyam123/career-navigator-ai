@@ -3,7 +3,7 @@ import { C as getScriptPreloadAttrs, D as executeRewriteInput, E as resolveManif
 import { n as createMemoryHistory } from "../_libs/tanstack__history.mjs";
 import { d as su, i as mergeHeaders, l as Pu, n as getNormalizedURL, o as createRawStreamRPCPlugin, r as getOrigin, s as createSerializationAdapter, t as attachRouterServerSsrUtils, u as iu } from "../_libs/@tanstack/router-core+[...].mjs";
 import { _ as safeObjectMerge, a as X_TSS_RAW_RESPONSE, c as createNullProtoObject, d as getDefaultSerovalPlugins, g as runWithStartContext, h as requestHandler, i as TSS_SERVER_FUNCTION, m as getStartContext, n as TSS_CONTENT_TYPE_FRAMED_VERSIONED, o as X_TSS_SERIALIZED, p as getResponse, r as TSS_FORMDATA_CONTEXT, s as createCsrfMiddleware, t as FrameType, u as flattenMiddlewares } from "./esm-9EjmF9OT.mjs";
-import { t as getServerFnById } from "../__23tanstack-start-server-fn-resolver-DJQAKNaq.mjs";
+import { t as getServerFnById } from "../__23tanstack-start-server-fn-resolver-B3YP7JXB.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-arrow+[...].mjs";
 require_react();
@@ -968,7 +968,7 @@ var getBaseManifest = getProdBaseManifest;
 var createEarlyHintsForRequest = createEarlyHintsCollector;
 async function loadEntries() {
 	const [routerEntry, startEntry, pluginAdapters] = await Promise.all([
-		import("./router-CocDyUyg.mjs"),
+		import("./router-D0JLHD8S.mjs"),
 		import("./start-CtjYJ1E4.mjs"),
 		import("./empty-plugin-adapters-D9UWiqvJ.mjs")
 	]);

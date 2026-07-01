@@ -1,7 +1,7 @@
 import { l as createServerFn } from "./esm-9EjmF9OT.mjs";
-import { t as requireSupabaseAuth } from "./auth-middleware-BITxcjnR.mjs";
+import { t as requireSupabaseAuth } from "./auth-middleware-B67yFdw9.mjs";
 import { t as createServerRpc } from "./createServerRpc-TAUNrjZd.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/dashboard.functions-CAqcDCQx.js
+//#region node_modules/.nitro/vite/services/ssr/assets/dashboard.functions-DHinvXaE.js
 function coerceStringArray(v) {
 	if (Array.isArray(v)) return v.filter((x) => typeof x === "string");
 	return [];

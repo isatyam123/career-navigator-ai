@@ -1,6 +1,6 @@
 import { g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { c as require_jsx_runtime } from "../_libs/@radix-ui/react-arrow+[...].mjs";
-import { n as useServerFn } from "./createSsrRpc-fhM2z-rE.mjs";
+import { n as useServerFn } from "./createSsrRpc-IMwUtkkP.mjs";
 import { t as Button } from "./button-BpE9Czok.mjs";
 import { n as CardContent, t as Card } from "./card-Bmhn9hYF.mjs";
 import { t as PagePlaceholder } from "./PagePlaceholder-BXXXz2LN.mjs";
@@ -8,9 +8,9 @@ import { t as Progress } from "./progress-ChzuiZwr.mjs";
 import { t as Badge } from "./badge-DHlcf1ty.mjs";
 import { n as useQuery } from "../_libs/tanstack__react-query.mjs";
 import { H as CircleCheck, I as TriangleAlert, L as Sparkles, P as ArrowLeft, g as Lightbulb, m as Mail, o as Target, p as MessageSquare, v as KeyRound, y as History, z as LoaderCircle } from "../_libs/lucide-react.mjs";
-import { t as getAnalysisById } from "./dashboard.functions-CrPFd86C.mjs";
-import { t as Route } from "./history._id-k-ydVx_h.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/history._id-Bn7s2FOt.js
+import { t as getAnalysisById } from "./dashboard.functions-DuQkyjfe.mjs";
+import { t as Route } from "./history._id-DtghPzB3.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/history._id-BWWQlZTY.js
 var import_jsx_runtime = require_jsx_runtime();
 function AnalysisDetailPage() {
 	const { id } = Route.useParams();

@@ -6,8 +6,8 @@ import { t as supabase } from "./client-CwjOB3K7.mjs";
 import { n as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { r as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
-import { t as Route$12 } from "./history._id-k-ydVx_h.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CocDyUyg.js
+import { t as Route$12 } from "./history._id-DtghPzB3.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/router-D0JLHD8S.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Toaster$1 = ({ ...props }) => {
@@ -182,17 +182,17 @@ var Route$7 = createFileRoute("/auth/callback")({
 });
 var $$splitComponentImporter$6 = () => import("./settings-CL0ImZNw.mjs");
 var Route$6 = createFileRoute("/_authenticated/settings")({ component: lazyRouteComponent($$splitComponentImporter$6, "component") });
-var $$splitComponentImporter$5 = () => import("./resume-w7uNoZtc.mjs");
+var $$splitComponentImporter$5 = () => import("./resume-DFM23pxy.mjs");
 var Route$5 = createFileRoute("/_authenticated/resume")({ component: lazyRouteComponent($$splitComponentImporter$5, "component") });
-var $$splitComponentImporter$4 = () => import("./interview-prep-SMufmT1a.mjs");
+var $$splitComponentImporter$4 = () => import("./interview-prep-0E7BFwob.mjs");
 var Route$4 = createFileRoute("/_authenticated/interview-prep")({ component: lazyRouteComponent($$splitComponentImporter$4, "component") });
-var $$splitComponentImporter$3 = () => import("./history-BhT-pLPX.mjs");
+var $$splitComponentImporter$3 = () => import("./history-DVap4kTa.mjs");
 var Route$3 = createFileRoute("/_authenticated/history")({ component: lazyRouteComponent($$splitComponentImporter$3, "component") });
-var $$splitComponentImporter$2 = () => import("./dashboard-DA0TGEnN.mjs");
+var $$splitComponentImporter$2 = () => import("./dashboard-E0auOU2f.mjs");
 var Route$2 = createFileRoute("/_authenticated/dashboard")({ component: lazyRouteComponent($$splitComponentImporter$2, "component") });
-var $$splitComponentImporter$1 = () => import("./applications-BGmfhp4d.mjs");
+var $$splitComponentImporter$1 = () => import("./applications-COYzapO7.mjs");
 var Route$1 = createFileRoute("/_authenticated/applications")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./ai-analysis-C3cepcNm.mjs");
+var $$splitComponentImporter = () => import("./ai-analysis-C3NThvzj.mjs");
 var Route = createFileRoute("/_authenticated/ai-analysis")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var AuthRoute = Route$10.update({
 	id: "/auth",

@@ -1,7 +1,7 @@
 import { l as createServerFn } from "./esm-9EjmF9OT.mjs";
-import { t as createSsrRpc } from "./createSsrRpc-fhM2z-rE.mjs";
-import { t as requireSupabaseAuth } from "./auth-middleware-BITxcjnR.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/dashboard.functions-CrPFd86C.js
+import { t as createSsrRpc } from "./createSsrRpc-IMwUtkkP.mjs";
+import { t as requireSupabaseAuth } from "./auth-middleware-B67yFdw9.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/dashboard.functions-DuQkyjfe.js
 var getDashboardStats = createServerFn({ method: "GET" }).middleware([requireSupabaseAuth]).handler(createSsrRpc("d8dd0f2f33ee8ce5e2ea2bfc749715b8e981950fa8bc0e14ec15d540b50039e9"));
 var listAnalyses = createServerFn({ method: "GET" }).middleware([requireSupabaseAuth]).handler(createSsrRpc("a1064e299f31cb4f7d016e9dcd002b92ac4789afb1482dc78da3dbc6374841e1"));
 var getAnalysisById = createServerFn({ method: "GET" }).middleware([requireSupabaseAuth]).inputValidator((input) => {

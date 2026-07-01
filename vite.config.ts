@@ -14,9 +14,13 @@ export default defineConfig({
     }),
     nitro({
       preset: process.env.VERCEL ? "vercel" : "node-server",
+      noExternals: process.env.VERCEL ? true : false,
     }),
     react(),
     tailwindcss(),
     tsConfigPaths(),
   ],
+  ssr: {
+    noExternal: ["tslib"],
+  },
 });
