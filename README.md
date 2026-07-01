@@ -1,89 +1,87 @@
 # Career Navigator AI
 
-Career Navigator AI is a comprehensive, intelligent job application manager designed for students and professionals. By leveraging advanced AI, this platform transforms the chaotic job hunt into a structured, optimized, and personalized experience.
+Career Navigator AI is an intelligent job application manager tailored for students and early-career professionals. It leverages Google Gemini AI to analyze resumes against job descriptions, track application statuses, and provide tailored interview preparation.
 
-<div align="center">
-  <img src="https://via.placeholder.com/1200x600/18181b/ffffff?text=Career+Navigator+AI+Dashboard" alt="Career Navigator AI Dashboard">
-</div>
+## Features
 
-## ✨ Features
+- **AI Resume Analyzer**: Upload your resume and paste a job description to receive an instant ATS score, match percentage, and actionable feedback.
+- **Application Tracking**: Keep all your job applications organized in one place with a Kanban-style pipeline (Applied, OA, Interview, HR, Offer, Rejected, Withdrawn).
+- **Interview Prep**: Generate targeted technical, behavioral, and HR questions based on your resume and the specific role.
+- **Email Generator**: Draft professional follow-ups, recruiter outreaches, and application emails with one click.
+- **Dashboard Analytics**: Get a bird's-eye view of your application conversion rates and overall progress.
 
-- **Smart Resume Analyzer**: Upload your resume PDF and paste a job description. The AI instantly calculates your ATS compatibility, identifies missing skills, and suggests concrete improvements.
-- **AI Interview Prep**: Generate customized technical, behavioral, and HR interview questions tailored to your exact background and the specific role you're targeting.
-- **Application Tracker**: Stay organized with a built-in Kanban-style pipeline. Track the status of every application, set deadlines, and attach notes effortlessly.
-- **AI Outreach Emails**: Say goodbye to writer's block. Automatically draft polished application and follow-up emails highlighting your strengths and aligning with the job description.
-- **Detailed History Logging**: Every resume analysis and interview prep session is saved so you can revisit them without spending additional AI credits.
+## Tech Stack
 
-## 🛠️ Tech Stack
+- **Framework**: TanStack Start (React 19)
+- **Styling**: Tailwind CSS, Shadcn UI
+- **Database**: Supabase (PostgreSQL)
+- **Authentication**: Supabase Auth (Google OAuth & Email/Password)
+- **AI Integration**: Google Gemini via Vercel AI SDK
+- **File Storage**: Supabase Storage
+- **Deployment**: Vercel
 
-- **Frontend & Framework**: [TanStack Start](https://tanstack.com/start/latest) (React 19 + Vite)
-- **Styling**: Tailwind CSS + [shadcn/ui](https://ui.shadcn.com/)
-- **Backend & Database**: [Supabase](https://supabase.com/) (Authentication, Postgres DB, Storage)
-- **AI Integration**: Vercel AI SDK (`@ai-sdk/google`) powered by Google Gemini (e.g., `gemini-1.5-flash`)
-- **PDF Extraction**: `unpdf` (Workers-compatible pdf.js build)
+## Local Setup
 
-## 📸 Screenshots
+### 1. Clone the repository
+```bash
+git clone https://github.com/yourusername/career-navigator-ai.git
+cd career-navigator-ai
+```
 
-<div align="center">
-  <img src="https://via.placeholder.com/800x450/18181b/ffffff?text=Resume+Analysis+Results" width="49%">
-  <img src="https://via.placeholder.com/800x450/18181b/ffffff?text=Application+Tracker+Board" width="49%">
-</div>
-<div align="center">
-  <img src="https://via.placeholder.com/800x450/18181b/ffffff?text=Interview+Prep+Deck" width="49%">
-  <img src="https://via.placeholder.com/800x450/18181b/ffffff?text=AI+Email+Generator" width="49%">
-</div>
-
-## 🚀 Getting Started
-
-### 1. Install Dependencies
-
+### 2. Install dependencies
 ```bash
 npm install
 ```
 
-### 2. Configure Environment Variables
-
-Copy `.env.example` to `.env` and fill in your values. You can find your Supabase credentials in your project dashboard under **Settings → API**.
-
-```env
-VITE_SUPABASE_URL=https://<your-project-ref>.supabase.co
-VITE_SUPABASE_PUBLISHABLE_KEY=<your-anon-publishable-key>
-VITE_SUPABASE_PROJECT_ID=<your-project-ref>
-
-SUPABASE_URL=https://<your-project-ref>.supabase.co
-SUPABASE_PUBLISHABLE_KEY=<your-anon-publishable-key>
-SUPABASE_SERVICE_ROLE_KEY=<your-service-role-key>   # Secret! Server only.
-SUPABASE_PROJECT_ID=<your-project-ref>
-
-# Set your Google Gemini API key here
-GEMINI_API_KEY=<your-gemini-api-key>
+### 3. Set up Environment Variables
+Copy the `.env.example` file to `.env` and fill in your values:
+```bash
+cp .env.example .env
 ```
+Ensure you provide your Supabase URL, Anon Key, and Google Gemini API Key.
 
-### 3. Setup Supabase Auth (Google Sign-in)
+### 4. Supabase Setup
+You need a Supabase project. The initial database schema is located in `supabase/migrations/00000000000000_initial_schema.sql`.
 
-The app relies on native Supabase Google OAuth for authentication.
+1. Go to your Supabase project dashboard.
+2. Navigate to the SQL Editor.
+3. Paste the contents of `00000000000000_initial_schema.sql` and execute it.
+4. Set up an authentication provider (Google OAuth is recommended) in Authentication -> Providers.
+5. Set up a Storage bucket named `resumes` and ensure the RLS policies allow authenticated users to upload files.
 
-1. In the **Google Cloud Console**, create an OAuth Web Application credential.
-2. Add `https://<your-project-ref>.supabase.co/auth/v1/callback` as an Authorized Redirect URI.
-3. In your **Supabase Dashboard** (Authentication → Providers), enable **Google** and paste your Client ID and Secret.
-4. In Supabase (Authentication → URL Configuration), add `http://localhost:3000/auth/callback` to your Redirect URLs.
-
-### 4. Run the Local Development Server
-
+### 5. Run the development server
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Visit `http://localhost:3000` to view the application.
 
-## 🌍 Deployment (Vercel)
+## Vercel Deployment
 
-1. Push your repository to GitHub.
-2. Import the project into Vercel. There's no need for a framework preset, as the included `vercel.json` and build scripts automatically configure TanStack Start for Vercel using Nitro.
-3. Add all your environment variables from `.env` into your Vercel Project Settings.
-4. Update your Supabase URL Configuration to include your new Vercel domain (e.g., `https://<your-vercel-domain>/auth/callback`).
-5. Deploy and enjoy!
+The application is configured to be deployed easily on Vercel.
 
-## 📄 License
+1. Push your code to GitHub.
+2. Import the repository in Vercel.
+3. Add the required environment variables from your `.env` file to the Vercel project settings.
+4. Deploy!
 
-This project is open-source and available under the MIT License.
+## Folder Structure
+
+```text
+├── src/
+│   ├── components/       # Reusable React components (UI library)
+│   ├── hooks/            # Custom React hooks
+│   ├── integrations/     # Third-party integrations (Supabase Client, Types)
+│   ├── lib/              # Utility functions and server operations
+│   ├── routes/           # TanStack Start file-based routing
+│   ├── server.ts         # Server entry point
+│   └── styles.css        # Global CSS and Tailwind directives
+├── supabase/
+│   └── migrations/       # Database SQL migrations
+├── public/               # Static assets
+└── vite.config.ts        # Vite configuration
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

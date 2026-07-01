@@ -6,6 +6,7 @@ import { extractText, getDocumentProxy } from "unpdf";
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 const InputSchema = z.object({
   filePath: z.string().min(1),
+  fileName: z.string().min(1),
   jobDescription: z.string().default(""),
 });
 
@@ -31,6 +32,22 @@ function safeParseJson(raw: string): unknown {
     return JSON.parse(match[0]);
   }
 }
+
+export const getLatestResumeFile = createServerFn({ method: "GET" })
+  .middleware([requireSupabaseAuth])
+  .handler(async ({ context }) => {
+    const { supabase, userId } = context;
+    const { data, error } = await supabase
+      .from("resume_files")
+      .select("*")
+      .eq("user_id", userId)
+      .order("uploaded_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+
+    if (error) throw new Error(error.message);
+    return data;
+  });
 
 export const analyzeResume = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
@@ -63,12 +80,34 @@ export const analyzeResume = createServerFn({ method: "POST" })
     if (existing) {
       await supabase
         .from("resume")
-        .update({ resume_text: resumeText, file_path: data.filePath })
+        .update({ resume_text: resumeText, file_path: data.filePath, filename: data.fileName })
         .eq("id", existing.id);
     } else {
+      await supabase.from("resume").insert({
+        user_id: userId,
+        resume_text: resumeText,
+        file_path: data.filePath,
+        filename: data.fileName,
+      });
+    }
+
+    // 3.5. Update resume_files metadata
+    const { data: existingResumeFile } = await supabase
+      .from("resume_files")
+      .select("id")
+      .eq("user_id", userId)
+      .eq("file_name", data.fileName)
+      .maybeSingle();
+
+    if (existingResumeFile) {
       await supabase
-        .from("resume")
-        .insert({ user_id: userId, resume_text: resumeText, file_path: data.filePath });
+        .from("resume_files")
+        .update({ file_path: data.filePath, uploaded_at: new Date().toISOString() })
+        .eq("id", existingResumeFile.id);
+    } else {
+      await supabase
+        .from("resume_files")
+        .insert({ user_id: userId, file_path: data.filePath, file_name: data.fileName });
     }
 
     const google = createGoogleGenerativeAI({ apiKey: key });
@@ -119,6 +158,7 @@ ${(data.jobDescription || "No job description provided — evaluate general mark
     // 5. Save analysis row.
     const { error: insErr } = await supabase.from("analysis").insert({
       user_id: userId,
+      resume_path: data.filePath,
       match_score: analysis.match_score,
       ats_score: analysis.ats_score,
       missing_skills: analysis.missing_skills,

@@ -21,15 +21,15 @@ export const Route = createFileRoute("/_authenticated/settings")({
             <div className="grid gap-3">
               <div className="grid gap-1.5">
                 <Label>Full name</Label>
-                <Input defaultValue="Alex Morgan" className="rounded-xl bg-muted/40" />
+                <Input placeholder="Enter your name" className="rounded-xl bg-muted/40" />
               </div>
               <div className="grid gap-1.5">
                 <Label>Email</Label>
-                <Input defaultValue="alex@uni.edu" className="rounded-xl bg-muted/40" />
+                <Input placeholder="Enter your email" className="rounded-xl bg-muted/40" />
               </div>
               <div className="grid gap-1.5">
-                <Label>University</Label>
-                <Input defaultValue="Stanford University" className="rounded-xl bg-muted/40" />
+                <Label>University / Company</Label>
+                <Input placeholder="Enter your organization" className="rounded-xl bg-muted/40" />
               </div>
             </div>
             <Button className="mt-2 w-fit rounded-xl bg-gradient-brand text-white shadow-glow">

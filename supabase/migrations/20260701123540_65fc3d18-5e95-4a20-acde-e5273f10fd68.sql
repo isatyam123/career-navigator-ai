@@ -1,2 +1,0 @@
-ALTER TABLE public.resume ADD COLUMN IF NOT EXISTS resume_text TEXT;
-ALTER TABLE public.resume ADD COLUMN IF NOT EXISTS filename TEXT;

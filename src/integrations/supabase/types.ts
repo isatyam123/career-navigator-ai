@@ -26,6 +26,7 @@ export type Database = {
           summary: string | null;
           user_id: string;
           weaknesses: Json;
+          resume_path: string | null;
         };
         Insert: {
           application_id?: string | null;
@@ -44,6 +45,7 @@ export type Database = {
           summary?: string | null;
           user_id: string;
           weaknesses?: Json;
+          resume_path?: string | null;
         };
         Update: {
           application_id?: string | null;
@@ -62,6 +64,7 @@ export type Database = {
           summary?: string | null;
           user_id?: string;
           weaknesses?: Json;
+          resume_path?: string | null;
         };
         Relationships: [
           {
@@ -82,6 +85,7 @@ export type Database = {
           job_description: string | null;
           notes: string | null;
           role: string;
+          stage: string | null;
           status: string;
           user_id: string;
         };
@@ -93,6 +97,7 @@ export type Database = {
           job_description?: string | null;
           notes?: string | null;
           role: string;
+          stage?: string | null;
           status?: string;
           user_id: string;
         };
@@ -104,6 +109,7 @@ export type Database = {
           job_description?: string | null;
           notes?: string | null;
           role?: string;
+          stage?: string | null;
           status?: string;
           user_id?: string;
         };
@@ -130,6 +136,36 @@ export type Database = {
           email?: string | null;
           full_name?: string | null;
           id?: string;
+        };
+        Relationships: [];
+      };
+      resume_files: {
+        Row: {
+          id: string;
+          user_id: string;
+          file_path: string;
+          file_name: string;
+          uploaded_at: string;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          file_path: string;
+          file_name: string;
+          uploaded_at?: string;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          file_path?: string;
+          file_name?: string;
+          uploaded_at?: string;
+          created_at?: string;
+          updated_at?: string;
         };
         Relationships: [];
       };

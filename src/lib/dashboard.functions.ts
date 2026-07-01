@@ -61,7 +61,7 @@ export const getDashboardStats = createServerFn({ method: "GET" })
         .limit(5),
     ]);
 
-    const latestScore = recent.data?.find((r) => r.match_score !== null)?.match_score ?? null;
+    const latestScore = recent.data?.find((r) => r.ats_score !== null)?.ats_score ?? null;
 
     return {
       totalApplications: apps.count ?? 0,

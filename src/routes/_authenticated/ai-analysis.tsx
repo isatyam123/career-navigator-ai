@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import {
   Sparkles,
   Loader2,
@@ -41,6 +41,7 @@ function AiAnalysisPage() {
   const [result, setResult] = useState<ResumeAnalysis | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const fn = useServerFn(analyzeResume);
+  const queryClient = useQueryClient();
 
   const mutation = useMutation({
     mutationFn: async () => {
@@ -57,10 +58,12 @@ function AiAnalysisPage() {
         .upload(filePath, file, { contentType: "application/pdf", upsert: false });
       if (upErr) throw new Error(`Upload failed: ${upErr.message}`);
 
-      return fn({ data: { filePath, jobDescription } });
+      return fn({ data: { filePath, fileName: file.name, jobDescription } });
     },
     onSuccess: (data) => {
       setResult(data);
+      queryClient.invalidateQueries({ queryKey: ["dashboard-stats"] });
+      queryClient.invalidateQueries({ queryKey: ["analysis-history"] });
       toast.success("Analysis complete");
     },
     onError: (err: Error) => toast.error(err.message),
