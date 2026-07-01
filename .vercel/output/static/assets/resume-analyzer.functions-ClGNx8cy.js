@@ -1,0 +1,1 @@
+import{n as e,t}from"./auth-middleware-CC2_KW1x.js";import{k as n}from"./index-DLsYFtM8.js";var r=e({method:`GET`}).middleware([t]).handler(n(`78cb6936c0b3b84410e988d2f410b42adf3e6b2875702f913c7c40c3f43220cb`)),i=e({method:`POST`}).middleware([t]).handler(n(`bf861c3b9b3234bd2ce6814b97f71c999148be093338c5b3531d9bc4373f634d`));export{r as n,i as t};
